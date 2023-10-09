@@ -11,38 +11,34 @@ const processData = (rawData, group, order) => {
         "Cancelled": { grpName: "Cancelled", presentTickets: [] }
     };
     const priorityListObj = {
-        0: { grpName: "No priority", presentTickets: [] },
-        4: { grpName: "Urgent", presentTickets: [] },
-        3: { grpName: "High", presentTickets: [] },
-        2: { grpName: "Medium", presentTickets: [] },
-        1: { grpName: "Low", presentTickets: [] }
-    };    
+        "0": { grpName: "No priority", presentTickets: [] },
+        "-4": { grpName: "Urgent", presentTickets: [] },
+        "-3": { grpName: "High", presentTickets: [] },
+        "-2": { grpName: "Medium", presentTickets: [] },
+        "-1": { grpName: "Low", presentTickets: [] }
+    };
     const userListObj = rawData.users.reduce((acc, userObj) => {
-        acc[userObj.id] = { grpName: userObj.name, presentTickets: [], available: userObj.available};
+        acc[userObj.id] = { grpName: userObj.name, presentTickets: [], available: userObj.available };
         return acc;
     }, {});
 
-    if(group === "userId")
-    {
-        finalDataObj = {userObj: userListObj, ticketObj: groupData(userListObj, rawData, group), grp: group};
+    if (group === "userId") {
+        finalDataObj = { userObj: userListObj, ticketObj: groupData(userListObj, rawData, group), grp: group };
     }
-    else if(group === "priority")
-    {
-        finalDataObj = {userObj: userListObj, ticketObj: groupData(priorityListObj, rawData, group), grp: group};
+    else if (group === "priority") {
+        finalDataObj = { userObj: userListObj, ticketObj: groupData(priorityListObj, rawData, group), grp: group };
     }
-    else
-    {
-        finalDataObj = {userObj: userListObj, ticketObj: groupData(statusListObj, rawData, group), grp: group};
+    else {
+        finalDataObj = { userObj: userListObj, ticketObj: groupData(statusListObj, rawData, group), grp: group };
     }
     return finalDataObj;
 }
 
 const groupData = (listObj, orderedData, group) => {
     const dataObj = listObj;
-    for(let i=0; i<orderedData?.tickets?.length; i++)
-    {
+    for (let i = 0; i < orderedData?.tickets?.length; i++) {
         const ticket = orderedData?.tickets[i];
-        const attribute = ticket[group];
+        const attribute = (group !== "priority") ? ticket[group] : -ticket[group];
         dataObj[attribute].presentTickets.push(ticket);
     }
     return dataObj;
