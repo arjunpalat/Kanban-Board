@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BsSliders2 } from "react-icons/bs"
 import { FiChevronDown } from "react-icons/fi"
 import "./NavBar.css";

@@ -32,6 +32,7 @@ function App() {
       try {
         console.log("Fetching!");
         const newData = await fetchData(displayGroup, displayOrder);
+        console.log("Succesfully Fetched!")
         setFetchedData(newData);
         setProcessedData(processData(newData, displayGroup, displayOrder));
       } catch (error) {
@@ -51,7 +52,6 @@ function App() {
         }}
       >
         <NavBar displayOrder={displayOrder} displayGroup={displayGroup} onDisplaySelectChange={onDisplaySelectChange} />
-        {console.log("Rendering App Components")}
         {(processedData.ticketObj) && <Dashboard />}
       </userData.Provider>
     </div>

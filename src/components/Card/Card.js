@@ -17,7 +17,7 @@ const Card = ({ ticketDetails }) => {
                </div>}
             </div>
             <div className="card-title">
-               {(displayGroup !== "status") && icons[ticketDetails.status]}
+               {(displayGroup !== "status") && <span>{icons[ticketDetails.status]}</span>}
                <span>{title}</span>
             </div>
          </div>
