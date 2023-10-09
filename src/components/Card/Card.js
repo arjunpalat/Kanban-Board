@@ -1,29 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./Card.css";
-import { icons } from "../../constants/icons";
-import { BsCircleFill } from "react-icons/bs";
+import { icons, getImage, getStatusIcon } from "../../constants/icons";
+import { userData } from '../../App';
 
-const Card = ({ ticketDetails, userObj, isUser }) => {
+const Card = ({ ticketDetails }) => {
+   const { userObj, displayGroup } = useContext(userData);
+   const title = (ticketDetails.title.length > 70) ? ticketDetails.title.substr(0, 70) + "..." : ticketDetails.title;
    return (
       <div className="card-container">
          <div className="card-id-title">
             <div className="card-id">
                <span>{ticketDetails.id}</span>
-               {!(isUser) && <div className="card-img-container">
-                  <img src={`https://ui-avatars.com/api/?background=000000&format=svg&color=fff&name=${userObj[ticketDetails.userId].grpName}`} className="card-img" />
-                  <BsCircleFill className="card-img-status" style={{ color: (userObj[ticketDetails.userId].available) ? "lightgreen" : "gray" }} />
+               {(displayGroup !== "userId") && <div className="card-img-container">
+                  {getImage(userObj[ticketDetails.userId].grpName)}
+                  {getStatusIcon(userObj[ticketDetails.userId].available)}
                </div>}
             </div>
             <div className="card-title">
-               <span>{(ticketDetails.title.length > 70) ? ticketDetails.title.substr(0, 70) + `...` : ticketDetails.title}</span>
+               {(displayGroup !== "status") && icons[ticketDetails.status]}
+               <span>{title}</span>
             </div>
          </div>
          <div className="card-category-tag">
-            <span className="card-category">{icons["Unknown"]}</span>
-            <span className="card-tag">
+            {(displayGroup !== "priority") && <span className="card-category">{icons[ticketDetails.priority]}</span>}
+            {ticketDetails.tag.map((tagName, index) => <span key={index} className="card-tag">
                {icons["Feature"]}
-               Feature Request
-            </span>
+               {tagName}
+            </span>)}
          </div>
       </div>
    );

@@ -21,8 +21,8 @@ const Navbar = ({ displayGroup, displayOrder, onDisplaySelectChange }) => {
               <select
                 value={displayGroup}
                 onChange={(e) => {
-                  onDisplaySelectChange(e.target.value, true);
                   setDisplayPress(!displayPress);
+                  onDisplaySelectChange(e.target.value, true);
                 }}
               >
                 <option value="status">Status</option>
@@ -35,8 +35,8 @@ const Navbar = ({ displayGroup, displayOrder, onDisplaySelectChange }) => {
               <select
                 value={displayOrder}
                 onChange={(e) => {
-                  onDisplaySelectChange(e.target.value, false);
                   setDisplayPress(!displayPress);
+                  onDisplaySelectChange(e.target.value, false);
                 }}
               >
                 <option value="priority">Priority</option>
