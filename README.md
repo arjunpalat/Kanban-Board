@@ -22,7 +22,7 @@ To run the app locally on your system, follow the instructions.
 
 1) Download the project files or use Git Clone using your Terminal at the desired directory
 ```bash
-git clone https://github.com/arjunpalat/GroTube.git
+git clone https://github.com/arjunpalat/Kanban-Board.git
 ```  
 2) Install dependencies (might take some time)
 
