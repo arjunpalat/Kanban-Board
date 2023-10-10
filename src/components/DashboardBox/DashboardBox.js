@@ -14,7 +14,7 @@ const DashboardBox = ({ id, name, ticketsArray }) => {
           {(displayGroup !== "userId") ?
             icons[name]
             :
-            <div className="card-img-container">
+            <div className="dashboardbox-img-container">
               {getImage(name)}
               {getStatusIcon(userObj[id].available)}
             </div>

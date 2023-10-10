@@ -1,37 +1,65 @@
 .card-container {
+    position: relative;
     width: auto;
-    padding: 0 1vw;
+    padding: 0.5vh 1vw;
     background-color: white;
     border-radius: 6px;
-    height: 14vh;
+    height: 12vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     font-size: 14px;
 }
+.card-img-container {
+    position: absolute;
+    top: 1.7vh;
+    right: 1vw; 
+ }
+ 
+ .card-img {
+     border-radius: 50%;
+     height: 20px;
+     width: 20px;
+ }
+ 
+ .card-img-status {
+     position: absolute;
+     top: 13px;
+     left: 13px;
+     font-size: 9px;
+     color: rgb(10, 212, 10);
+ }
 
-.card-title {
-    display: flex;
-    gap: 5px;
 
+.card-ticketid {
+    color: gray;
 }
 
-.card-category-tag {
+.card-status-title-container {
+    display: flex;
+    gap: 5px;
+}
+
+.card-title {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-right: 2vw;
+}
+
+.card-priority-tag-container {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.card-category {
+.card-priority {
     color: gray;
     border: 1px solid silver;
     border-radius: 5px;
     padding: 2px 8px;
-}
-
-.card-id-title {
-    display: flex;
-    flex-direction: column;
+    font-size: 12px;
 }
 
 .card-tag {
@@ -41,31 +69,6 @@
     align-items: center;
     border: 1px solid silver;
     border-radius: 5px;
-    padding: 2px 8px;
+    padding: 3px 8px;
     font-size: 12px;
-}
-
-.card-id {
-    color: gray;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.card-img-container {
-    position: relative;
-}
-
-.card-img {
-    border-radius: 50%;
-    height: 20px;
-    width: 20px
-}
-
-.card-img-status {
-    position: absolute;
-    top: 13px;
-    left: 13px;
-    font-size: 9px;
-    color: rgb(10, 212, 10);
 }
