@@ -1,5 +1,6 @@
 .dashboard-box-container {
-    width: 260px;
+    width: 16%;
+    min-width: 260px;
     display: flex;
     flex-direction: column;
     position: relative;
