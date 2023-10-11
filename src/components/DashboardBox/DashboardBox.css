@@ -1,27 +1,30 @@
 .dashboard-box-container {
-    width: 18vw;
+    width: 260px;
     display: flex;
     flex-direction: column;
-    justify-content: space-;
+    position: relative;
 }
 
 .dashboard-box-category {
+    height: 20px;
     display: flex;
     justify-content: space-between;
-    padding: 3vh 0;
+    align-items: center;
+    padding: 20px 0;
 }
 
 .dashboard-box-category-txt {
     display: flex;
-    align-items: center;
-    gap: 0.5vw;
+    gap: 8px;
     font-size: 15px;
+    font-weight: 500;
+    align-items: center;
 }
 
 .dashboard-box-card-container {
     display: flex;
     flex-direction: column;
-    gap: 2vh;
+    gap: 18px;
 }
 .dashboardbox-img-container {
     position: relative;

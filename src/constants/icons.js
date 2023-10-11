@@ -1,15 +1,11 @@
 import {
-    BsPlusBsCircleFill,
-    BsDot,
     BsExclamationSquareFill,
-    Bs0Square,
     BsFillCheckCircleFill,
     BsThreeDots,
     BsCircleFill,
     BsCircle,
     BsPlusLg,
     BsXCircleFill,
-    BsFillEmojiSmileUpsideDownFill
 } from "react-icons/bs";
 
 import {
@@ -17,20 +13,16 @@ import {
 } from "react-icons/pi";
 
 import {
-    TbCircleDotted,
+    TbCircleDotted
 } from "react-icons/tb";
 
 import {
-    BiDotsHorizontal,
-    BiSignal3,
-    BiSignal2,
-    BiSignal1
+    BiDotsHorizontal
 } from "react-icons/bi";
 import {
     MdOutlineSignalCellularAlt,
     MdOutlineSignalCellularAlt2Bar,
     MdOutlineSignalCellularAlt1Bar,
-    MdOutlinePendingActions
 } from "react-icons/md";
 
 const icons = {
@@ -62,7 +54,7 @@ const getImage = (name) => {
 }
 const getStatusIcon = (isAvailable) => {
     const statusColor = isAvailable ? "lightgreen" : "gray";
-    return <BsCircleFill className="card-img-status" style={{ color: statusColor }} />
+    return <div className="card-img-status" style={{ backgroundColor: statusColor }} />
 }
 
 export { icons, getImage, getStatusIcon }

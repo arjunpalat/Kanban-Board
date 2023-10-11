@@ -18,12 +18,12 @@ function App() {
     if (isGroup) {
       localStorage.setItem("displayGroup", value);
       setDisplayGroup(value);
-      setProcessedData(processData(fetchedData, value, displayOrder));
+      (fetchedData) && setProcessedData(processData(fetchedData, value, displayOrder));
     }
     else {
       localStorage.setItem("displayOrder", value);
       setDisplayOrder(value);
-      setProcessedData(processData(fetchedData, displayGroup, value));
+      (fetchedData) && setProcessedData(processData(fetchedData, displayGroup, value));
     }
   }
 

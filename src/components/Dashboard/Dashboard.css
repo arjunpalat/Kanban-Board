@@ -1,6 +1,9 @@
 .dashboard-container {
+    position: relative;
+    top: 50px;
+    min-width: 1350px;
     background-color: rgb(244, 245, 248);
     display: flex;
-    padding: 0 2vw;
+    padding: 0 30px;
     justify-content: space-between;
 }

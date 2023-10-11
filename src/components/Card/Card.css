@@ -1,10 +1,10 @@
 .card-container {
     position: relative;
     width: auto;
-    padding: 0.5vh 1vw;
+    padding: 5px 10px;
     background-color: white;
     border-radius: 6px;
-    height: 12vh;
+    height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -12,8 +12,8 @@
 }
 .card-img-container {
     position: absolute;
-    top: 1.7vh;
-    right: 1vw; 
+    top: 10px;
+    right: 10px; 
  }
  
  .card-img {
@@ -26,8 +26,9 @@
      position: absolute;
      top: 13px;
      left: 13px;
-     font-size: 9px;
-     color: rgb(10, 212, 10);
+     width: 9px;
+     height: 9px;
+     border-radius: 50%;
  }
 
 
@@ -45,7 +46,8 @@
     overflow: hidden;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    margin-right: 2vw;
+    margin-right: 30px;
+    font-weight: 500;
 }
 
 .card-priority-tag-container {

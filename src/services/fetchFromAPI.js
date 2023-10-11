@@ -8,7 +8,7 @@ const fetchData = async (group, order) => {
         const rawData = await response.json();
         return rawData;
     } catch (error) {
-        console.error('Error fetching and processing data:', error);
+        console.error('Error Fetching Data:', error);
         throw error;
     }
 };
